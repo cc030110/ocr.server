@@ -37,12 +37,12 @@ class Boards(APIView) :
         serializer = BoardSerializer(boards, many=True)
         return Response(serializer.data)
     
-    def post(self, request) :
+    def post(self,request) :
         serializer = BoardSerializer(data=request.data)
-
+        # 유효성 검사
         if serializer.is_valid() :
             board = serializer.save() # create() 메소드를 호출하게 됨 
-
+            # 게시글존재&& 파일크기제한 발급받은 키를 활용해서 생성 upload메서드 활용해서 100mb 이하 파일 업로드
             if board.file and board.file.size < settings.FILE_SIZE_LIMIT :
                 uploadcare = Uploadcare(public_key=settings.UC_PUBLIC_KEY, secret_key=settings.UC_SECRET_KEY)
                 with open(board.file.path, 'rb') as file_object:
@@ -53,7 +53,8 @@ class Boards(APIView) :
             board.author = request.user
             board.save()
             return redirect(f'/board/{board.pk}')
-
+            # serializer.save() # 내장되어있는 create() 메소드를 호출하게 됨 
+            # return Response(serializer.data) 
         return Response(serializer.errors)
     
 

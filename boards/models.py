@@ -17,7 +17,7 @@ class Board(models.Model):
     # 파일
     file = models.FileField(upload_to='uploads/', blank=True)
     # 이미지 링크
-    image_link = models.URLField(default='')
+    image_url = models.URLField(default='')
     # 등록일
     create_at = models.DateTimeField(auto_now_add=True)
     # 수정일
