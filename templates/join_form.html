@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static '/style/form.css' %}">
-  <script src="{% static 'script/csrf.js' %}"></script>
   <title>회원가입</title>
 </head>
 <body>
@@ -25,7 +24,7 @@
             <input type="email" id="email" name="email" placeholder="이메일">
             <input type="hidden" id="is_active" name="is_active" value="1">
             <input type="button" value="가입하기" onclick="join()">
-            <span>이미 계정이 있습니까? <a>로그인</a></span>
+            <span>이미 계정이 있습니까? <a href="/login">로그인</a></span>
           </form>
         </div>
       </section>

@@ -19,6 +19,7 @@ class OCR(APIView):
 
 
 def index(request) :
+    print("request.user.username : ", request.user.username)
     return render(request, 'index.html')
 
 def login(request) :
