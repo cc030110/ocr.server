@@ -9,12 +9,12 @@ $.ajax({
     $('#author').text(board.author === null ? 'anonymous' : board.author.username);
     $('#title').val(board.title);
     $('#content').val(board.content);
-    $('#file').attr('src', board.file);
+    $('#file').attr('src',board.image_url);
     $('#create_at').val(board.create_at);
     $('#update_at').val(board.update_at);
 
     var languagechk = $('#languagechk');
-    if (board.file) {
+    if (board.image_url!=="") {
         languagechk.show();
     }else{
         languagechk.hide();
@@ -25,7 +25,10 @@ function changetxt() {
     var kor = $('#kor').is(':checked');
     var eng = $('#eng').is(':checked');
     var jpn = $('#jpn').is(':checked');
-    console.log("한국어 선택 : "+kor);
-    console.log("영어 선택 : "+eng);
-    console.log("일본어 선택 : "+jpn);
+
+    if(!kor&&!eng&&!jpn){
+        alert("최소 1개 이상 선택");
+    }else{
+
+    }
 }

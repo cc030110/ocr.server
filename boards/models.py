@@ -15,7 +15,7 @@ class Board(models.Model):
         related_name='boards' # 역접근자 rename 가능
     ) 
     # 파일
-    file = models.FileField(upload_to='uploads/', blank=True)
+    file = models.FileField(upload_to='uploads/', blank=True, null=True)
     # 이미지 링크
     image_url = models.URLField(default='')
     # 등록일

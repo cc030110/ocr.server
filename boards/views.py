@@ -1,3 +1,5 @@
+import os
+
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -49,9 +51,12 @@ class Boards(APIView) :
                     ucare_file = uploadcare.upload(file_object)
                     image_url = f"https://ucarecdn.com/{ucare_file.uuid}/"
                     board.image_url = image_url
-
             board.author = request.user
             board.save()
+
+            if os.path.isfile(board.file.path) :
+                os.remove(board.file.path)
+            
             return redirect(f'/board/{board.pk}')
             # serializer.save() # 내장되어있는 create() 메소드를 호출하게 됨 
             # return Response(serializer.data) 

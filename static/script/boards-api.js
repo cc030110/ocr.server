@@ -4,15 +4,14 @@ $.ajax({
   "timeout": 0,
 }).done(function (list) {
   list.forEach(board => {
-      image_url = 'media/noimage.jpeg';
-      image_url = board.file === null ? image_url : board.file;
+      image_url = board.image_url;
 
       $('#boards-container').append(`
       <div class="board">
               <img src="${image_url}">
               <p>
                   <a href="/board/${board.no}"><h4>${board.title}</h4></a>
-                  <span>${board.author}</span>
+                  <span>${board.author === null ? 'anonymous' : board.author.username}</span>
               </p>
           </div>
       `)
