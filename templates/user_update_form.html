@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/style/form.css' %}">
+  <title>회원수정</title>
+</head>
+<body>
+  <div id="wrap">
+    {% include 'header.html' %}
+    <main>
+      <section>
+        <div class="form-box">
+          <form id="{{ pk }}">
+            <h2>회원 정보 수정</h2>
+            <p>아이디</p>
+            <input type="text" id="username" name="username" readonly>
+            <p>이름</p>
+            <input type="text" id="name" name="name" placeholder="이름" required>
+            <p>이메일</p>
+            <input type="email" id="email" name="email" placeholder="이메일">
+            <p>비밀번호</p>
+            <input type="password" id="password" name="password" placeholder="비밀번호 변경">
+            <div class="button-box">
+              <input type="button" value="회원정보 수정" onclick="update_user()">
+              <input type="button" id="cancle" value="취소" >
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+  </div>
+  <script src="{% static 'script/user-api.js' %}"></script>
+</body>
+
+</html>

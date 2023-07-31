@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ocr-server"
+version = "0.1.0"
+description = ""
+authors = ["subin <cc030110@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ocr_server"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.3"
+djangorestframework = "^3.14.0"
+pillow = "^10.0.0"
+pytesseract = "^0.3.10"
+mysqlclient = "^2.2.0"
+pyuploadcare = "^4.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

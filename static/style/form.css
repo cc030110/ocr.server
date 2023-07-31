@@ -1,0 +1,109 @@
+@import url("grid.css");
+
+#wrap{
+  background-color: #f5f5f5;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-height: 80vh;
+}
+
+.form-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  border: 1px solid #4F200D;  
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.form-box > form{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 100%;
+  min-height: 60vh;
+}
+
+.form-box h2 {
+  text-align: center;
+  padding: 5%;
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #FF7B54;
+}
+
+.form-box input{
+  width: 80%;
+  height: 40px;
+  margin: 5% auto;
+  background-color: whitesmoke;
+  border: 1px solid #4F200D;  
+  border-radius: 5px;
+}
+
+input[type="submit"],
+input[type="button"] {
+  background-color: #FFC3A1;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none; /* 버튼 클릭 시 포커스 표시 제거 */
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover{
+  background-color: #F0997D;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active{
+  background-color: #D3756B;
+  transform: translateY(1px);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#join{
+  min-height: 100vh;
+}
+
+.join-form > span{
+  text-align: center;
+  padding-bottom: 3%;
+}
+
+.join-form > span > a{
+  color: red;
+}
+
+.join-form > span > a:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-update-form > p{
+  display: inline-block;
+  padding: 2% 10%;
+}
+
+.user-update-form > input{
+  margin-top: 0;
+}
+
+.button-box{
+  display: flex;
+  justify-content: center;
+}
+
+.button-box>input{
+  width: 100px;
+  height: 40px;
+  margin: 0 1%;
+  margin-bottom: 5%;
+  cursor: pointer;
+}

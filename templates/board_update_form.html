@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게시판</title>
+</head>
+
+<body>
+  <div id="wrap">
+    {% include 'header.html' %}
+    <main>
+      <section>
+        <h2>게시글 수정</h2>
+        <form>
+          <input type="text" id="title" name="title" placeholder="title">
+          <textarea id="content" name="content" autofocus></textarea>
+          <input type="file" id="file" name="file" accept="image/png, image/jpg, image/jpeg, image.gif">
+          <input type="button" value="게시글 수정" onclick="update()">
+        </form>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+  </div>
+  <script src="{% static 'script/board-api.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/style/board_form.css' %}">
+  <title>게시글 등록</title>
+</head>
+<body>
+  <div id="wrap">
+    {% include 'header.html' %}
+    <main>
+      <h2 class="logo">게시글 등록</h2>
+      <aside>
+        대충 메뉴 있는 곳
+      </aside>
+      <section>
+        <form method="POST" action="/api/v1/boards/" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="title-box">
+            <p>제목</p>
+            <input type="text" id="title" name="title" placeholder="제목">  
+          </div>
+          <div class="content-box">
+            <p>내용</p>
+            <textarea id="content" name="content" placeholder="여기에 내용을 작성하세요."></textarea>
+          </div>
+          <div class="file-box">
+            <p>파일</p>
+            <input type="file" id="file" name="file" accept="image/png, image/jpg, image/jpeg, image.gif">
+          </div>
+          <div class="button-box">
+            <input type="submit" id="save" value="저장">
+            <input type="button" id="cancle" value="취소">
+          </div>
+        </form>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+  </div>
+</body>
+</html>

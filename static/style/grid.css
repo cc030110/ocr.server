@@ -1,0 +1,70 @@
+@import url("reset.css");
+
+/* 눈누 - IAMPLAYER */
+@font-face {
+    font-family: 'IAMAPLAYER';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 눈누 - IBM Plex Sans */
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+html {
+    font-size: 18px;
+    font-family: 'IBMPlexSansKR-Regular';
+}
+
+#wrap {
+    display: grid;
+    grid-template-rows: 120px 1fr 100px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    max-width: 100vw;
+}
+
+footer {
+    grid-area: footer;
+    font-size: 0.8rem;
+    text-align: center;
+    padding-top: 15px;
+}
+
+footer > h2{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+h1 {
+    color: #3F2305;
+    text-align: center;
+    padding: 3% 0;
+    font-family: 'IAMAPLAYER';
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h1>a,
+h1>a:active{
+    color: #3F2305;
+}

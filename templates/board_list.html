@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style/board_list.css' %}">
+  <title>게시판</title>
+</head>
+
+<body>
+  <div id="wrap">
+    {% include 'header.html' %}
+    <main>
+      <section>
+        <h2>게시판</h2>
+        <div id="boards-container"></div>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+  </div>
+  <script src="{% static 'script/boards-api.js' %}"></script>
+</body>
+
+</html>

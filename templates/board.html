@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style/board.css' %}">
+  <title>게시글</title>
+</head>
+
+<body>
+  <div id="wrap">
+    {% include 'header.html' %}
+    <main>
+      <section>
+        <h2>게시글</h2>
+        <div id="board-contents">
+          <input type="text" id="title" name="title" readonly>
+          <p type="text" id="author"></p>
+          <textarea id="content" name="content" readonly></textarea>
+          <div id="image-container">
+            <img id="file" name="file" src="">
+            <div id="languagechk">
+              <p>언어선택</p>
+              <label><input type="checkbox" name="kor" id="kor" value="kor">한국어</label><br>
+              <label><input type="checkbox" name="eng" id="eng" value="eng">영어</label><br>
+              <label><input type="checkbox" name="jpn" id="jpn" value="jpn">일본어</label><br>
+              <button onclick="changetxt()">텍스트 변환</button>
+            </div>
+          </div>
+          <input type="datetime" id="create_at" readonly>
+          <input type="datetime" id="update_at" readonly>
+        </div>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+  </div>
+  <script src="{% static 'script/board-api.js' %}"></script>
+</body>
+
+</html>

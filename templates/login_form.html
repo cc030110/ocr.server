@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/style/form.css' %}">
+  <script src="{% static 'script/csrf.js' %}"></script>
+  <title>로그인</title>
+</head>
+<body>
+  <div id="wrap">
+    {% include 'header.html' %}
+    <main>
+      <section>
+        <div class="form-box">
+          <!-- <form method="POST" action="/api/v1/users/login" class="login-form"> -->
+          <form>
+            {% csrf_token %}
+            <h2>로그인</h2>
+            <input type="text" id="username" name="username" placeholder="아이디">
+            <input type="password" id="password" name="password" placeholder="비밀번호">
+            <!-- <input type="submit" value="로그인"> -->
+            <input type="button" value="로그인" onclick="login()">
+          </form>
+        </div>
+      </section>
+    </main>
+    {% include 'footer.html' %}
+  </div>
+  <script src="{% static 'script/log-api.js' %}"></script>
+</body>
+</html>
